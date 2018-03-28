@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <select id="method">
+        <option value="get">GET</option>
+        <option value="post">POST</option>
+        <option value="put">PUT</option>
+    </select>
+    <input type="button" value="Try it" onclick="sendRequest()" />
+    <span id='value1'>(Result)</span>
+</div>
+
+@section scripts {
+    <script>
+        //---------Back-end cross access----------
+        //var serviceUrl = 'http://localhost:1267/api/Product';
+
+        //function sendRequest() {
+        //    var method = $('#method').val();
+
+        //    $.ajax({
+        //        type: method,
+        //        url: serviceUrl
+        //    }).done(function (data) {
+        //        $('#value1').text(data);
+        //    }).error(function (jqXHR, textStatus, errorThrown) {
+        //        $('#value1').text(jqXHR.responseText || textStatus);
+        //    });
+        //}
+
+        //-------Basic JQuery------------
+        //var serviceUrl = 'http://localhost:1267/api/Products';
+        //function sendRequest() {
+        //    $.ajax({
+        //        url: serviceUrl,
+        //        dataType: "JSONP",
+        //        type: "GET",
+        //        success: function (data) {
+        //            var objectstring = JSON.stringify(data);
+        //            console.log(objectstring);
+        //        },
+        //        error: function (x, y, z) {
+        //            alert("failed");
+        //        }
+        //    });
+        //}
+
+        //------------Raw JS-------------
+        //function sendRequest() {
+        //    var script = document.createElement("script");
+        //    script.type = "text/javascript";
+        //    script.src = "http://localhost:1267/api/Products?callback=myCallback";
+        //    document.body.appendChild(script);
+        //}
+
+        //function myCallback(data) {
+        //    var products = JSON.stringify(data);
+        //    $('#value1').text(products);
+        //}       
+    </script>
+
+}
