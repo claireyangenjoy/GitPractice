@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-<div>
+<div id="container">
     <select id="method">
         <option value="get">GET</option>
         <option value="post">POST</option>
@@ -58,7 +58,44 @@
         //function myCallback(data) {
         //    var products = JSON.stringify(data);
         //    $('#value1').text(products);
-        //}       
+        //}
+
+        //-------Block scope---------
+        //-----ES6 之前没有Block-scope的概念-----
+        //if (true) {
+        //    let test = "test";
+        //}
+        //console.log(test); //error: test is not defined
+
+        //-------闭包---------------
+        //function closure() {
+        //    var container = document.getElementById("container");
+        //    for (var i = 0; i < 10; i++) {
+        //        (function (i) {
+        //            var a = document.createElement("a");
+        //            a.innerHTML = i + '<br/>';
+        //            a.addEventListener("click", function (e) {
+        //                e.preventDefault();
+        //                alert("I am link #" + i);
+        //            })
+        //            container.appendChild(a);
+        //        }(i));
+        //    }
+        //}
+        //closure();
+
+        //-------let解决之前的问题 -----------
+        var container = document.getElementById("container");
+        for (let i = 0; i < 10; i++) {
+            var a = document.createElement("a");
+            a.innerHTML = i + '<br/>';
+            a.addEventListener("click", function (e) {
+                e.preventDefault();
+                alert("I am link #" + i);
+            })
+            container.appendChild(a);
+        }
+
     </script>
 
-}
+}  
